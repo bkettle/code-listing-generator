@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="code-listing-generator", # Replace with your own username
-    version="0.0.7",
+    version="0.0.8",
     author="Ben Kettle",
     author_email="",
     description="Creates a LaTeX document with code from all files in the current directory",

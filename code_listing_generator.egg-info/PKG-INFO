@@ -1,6 +1,6 @@
 Metadata-Version: 1.2
 Name: code-listing-generator
-Version: 0.0.7
+Version: 0.0.8
 Summary: Creates a LaTeX document with code from all files in the current directory
 Home-page: https://github.com/bkettle/code-listing-generator
 Author: Ben Kettle

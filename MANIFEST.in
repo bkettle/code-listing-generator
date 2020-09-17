@@ -1,1 +1,1 @@
-include *.tex
+include code_listing_generator/template.tex
