@@ -6,6 +6,8 @@ from jinja2 import Template
 __location__ = os.path.realpath(
     os.path.join(os.getcwd(), os.path.dirname(__file__)))
 
+print(__location__)
+
 latex_jinja_env = jinja2.Environment(
 	block_start_string = '\BLOCK{', block_end_string = '}',
 	variable_start_string = '\VAR{',
