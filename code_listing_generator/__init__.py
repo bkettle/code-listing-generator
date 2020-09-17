@@ -52,3 +52,10 @@ def generate(name, title):
     
     with open("code-writeup/writeup.tex", "w") as f:
         f.write(finished)
+
+def main():
+    # get user and document info
+    name = input("What's your name? ")
+    title = input("What should this document be titled? ")
+
+    code_listing_generator.generate(name, title)
