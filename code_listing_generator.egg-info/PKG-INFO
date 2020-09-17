@@ -1,0 +1,14 @@
+Metadata-Version: 1.2
+Name: code-listing-generator
+Version: 0.0.1
+Summary: Creates a LaTeX document with code from all files in the current directory
+Home-page: https://github.com/bkettle/code-listing-generator
+Author: Ben Kettle
+Author-email: 
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6

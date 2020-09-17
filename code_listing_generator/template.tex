@@ -1,0 +1,68 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage{courier}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{times}
+\usepackage[%  
+    colorlinks=true,
+    pdfborder={0 0 0},
+    linkcolor=blue
+]{hyperref}
+\usepackage[all]{hypcap}
+\usepackage{float}
+\usepackage{textcomp}
+\usepackage[superscript,biblabel]{cite}
+\usepackage{placeins}
+
+\title{\vspace{-2cm}\VAR{doctitle}}
+\author{\VAR{name}}
+\date{\today}
+
+\usepackage{color}
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+
+\lstset{
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    numbers=left,
+    language=verilog,
+    showstringspaces=false,
+    keywordstyle=\color{deepblue},
+    emphstyle=\color{deepred},    % Custom highlighting style
+    stringstyle=\color{deepgreen},
+}
+
+\setlist[itemize]{noitemsep, topsep=5pt}
+\setlist[enumerate]{noitemsep, topsep=5pt}
+
+% for within multicol
+\newenvironment{Figure}
+  {\par\medskip\noindent\minipage{\linewidth}}
+  {\endminipage\par\medskip}
+
+
+\makeatletter
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Page \thepage}
+\lhead{\VAR{doctitle}}
+\fancyhead[C]{\nouppercase\leftmark}
+\makeatother
+
+% supress section numbers
+\renewcommand\sectionmark[1]{\markboth{#1}{}}
+
+\begin{document}
+\maketitle
+
+% load with jinja
+\VAR{content} 
+\end{document}
