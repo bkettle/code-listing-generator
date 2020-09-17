@@ -39,9 +39,14 @@ def get_filenames():
 
 tex_to_insert = ""
 for filename in get_filenames():
+    with open(filename, "r") as f:
+        file_contents = f.read()
+
     # make sure to escape underscores
     tex_to_insert += "\\subsection{\\tt{\detokenize{" + filename + "}}}\n"
-    tex_to_insert += "\\lstinputlisting{../" + filename + "}\n\n"
+    tex_to_insert += "\\begin{lstlisting}\n"
+    tex_to_insert += file_contents
+    tex_to_insert += "\n\\end{lstlisting}\n"
 
 template = latex_jinja_env.get_template('template.tex')
 finished = template.render(name=name, doctitle=title, content=tex_to_insert)
