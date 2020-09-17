@@ -58,4 +58,4 @@ def main():
     name = input("What's your name? ")
     title = input("What should this document be titled? ")
 
-    code_listing_generator.generate(name, title)
+    generate(name, title)
