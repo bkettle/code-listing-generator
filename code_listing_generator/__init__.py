@@ -19,37 +19,34 @@ latex_jinja_env = jinja2.Environment(
 	loader = jinja2.FileSystemLoader(__location__)
 )
 
-# make the directory to hold the writeup
-try:
-    os.mkdir("code-writeup")
-except FileExistsError:
-    confirm = input("Directory 'code-writeup' exists. Delete it? (y) ")
-    if confirm != 'y':
-        print("okay, exiting")
-        quit()
-
-# get user and document info
-name = input("What's your name? ")
-title = input("What should this document be titled? ")
-
-def get_filenames():
-    for filename in os.listdir():
-        if os.path.isfile(filename):
-            yield filename
-
-tex_to_insert = ""
-for filename in get_filenames():
-    with open(filename, "r") as f:
-        file_contents = f.read()
-
-    # make sure to escape underscores
-    tex_to_insert += "\\subsection{\\tt{\detokenize{" + filename + "}}}\n"
-    tex_to_insert += "\\begin{lstlisting}\n"
-    tex_to_insert += file_contents
-    tex_to_insert += "\n\\end{lstlisting}\n"
-
-template = latex_jinja_env.get_template('template.tex')
-finished = template.render(name=name, doctitle=title, content=tex_to_insert)
-
-with open("code-writeup/writeup.tex", "w") as f:
-    f.write(finished)
+def generate(name, title):
+    # make the directory to hold the writeup
+    try:
+        os.mkdir("code-writeup")
+    except FileExistsError:
+        confirm = input("Directory 'code-writeup' exists. Delete it? (y) ")
+        if confirm != 'y':
+            print("okay, exiting")
+            quit()
+    
+    def get_filenames():
+        for filename in os.listdir():
+            if os.path.isfile(filename):
+                yield filename
+    
+    tex_to_insert = ""
+    for filename in get_filenames():
+        with open(filename, "r") as f:
+            file_contents = f.read()
+    
+        # make sure to escape underscores
+        tex_to_insert += "\\subsection{\\tt{\detokenize{" + filename + "}}}\n"
+        tex_to_insert += "\\begin{lstlisting}\n"
+        tex_to_insert += file_contents
+        tex_to_insert += "\n\\end{lstlisting}\n"
+    
+    template = latex_jinja_env.get_template('template.tex')
+    finished = template.render(name=name, doctitle=title, content=tex_to_insert)
+    
+    with open("code-writeup/writeup.tex", "w") as f:
+        f.write(finished)
