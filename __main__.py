@@ -1,0 +1,9 @@
+#! /usr/bin/python3
+import code_listing_generator
+
+# get user and document info
+name = input("What's your name? ")
+title = input("What should this document be titled? ")
+
+code_listing_generator.generate(name, title)
+
