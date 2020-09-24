@@ -2,13 +2,13 @@
 
 This will generate a PDF documenting code in the given folder.
 
-To install:
+## To install:
 
 `pip3 install code-listing-generator`
 
 (requires python3)
 
-To use:
+## To use:
 
 * Navigate to the directory whose files you want to list
 * run the command `generate-code-listing`
