@@ -23,4 +23,5 @@ If you forget these while using the program, you can run `generate-code-listing 
 * `-c`: copy result to clipboard. This simply copies the generated result to the system clipboard, it should use the correct tool depending on OS. Relies on `pyperclip`, which requires `xclip` or `xsel` on Linux. Also prints the LaTeX output to STDOUT, in case the copying doesn't work or the clipboard contents gets lost on the way to Overleaf.
 * `-m`: make. This instructs the program to create a new directory `code-writeup` and save the outputted file inside that folder as `writeup.tex`. It then compiles this into a PDF with `pdflatex`--the result will be in the `code-writeup` folder it created.
 
+## Modifications
 If anything seems broken or you want me to change anything, open an issue (or submit a PR fixing it, if you want)
