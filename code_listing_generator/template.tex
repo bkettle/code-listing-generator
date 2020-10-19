@@ -24,10 +24,14 @@
 \author{\VAR{name}}
 \date{\today}
 
-\usepackage{color}
+\usepackage{xcolor}
 \definecolor{deepblue}{rgb}{0,0,0.5}
 \definecolor{deepred}{rgb}{0.6,0,0}
 \definecolor{deepgreen}{rgb}{0,0.5,0}
+\definecolor{lightgrey}{rgb}{.5, .5, .5}
+\definecolor{coral}{HTML}{CD5B45}
+\definecolor{cinnamon}{HTML}{7B3F00}
+\definecolor{brown}{HTML}{603311}
 
 \lstset{
     basicstyle=\ttfamily\footnotesize,
@@ -35,9 +39,14 @@
     numbers=left,
     language=verilog,
     showstringspaces=false,
-    keywordstyle=\color{deepblue},
-    emphstyle=\color{deepred},    % Custom highlighting style
-    stringstyle=\color{deepgreen},
+    keywordstyle=\color{deepblue}\bfseries,
+    emphstyle=\color{deepred},        
+	stringstyle=\color{deepgreen},
+	commentstyle=\color{lightgrey}\itshape,
+	identifierstyle=\color{brown},
+	tabsize=2,
+	literate={\ \ }{{\ }}1,
+	morekeywords={logic}
 }
 
 \setlist[itemize]{noitemsep, topsep=5pt}
